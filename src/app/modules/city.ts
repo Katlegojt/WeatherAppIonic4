@@ -1,0 +1,6 @@
+class City{
+
+name: string;
+
+}
+

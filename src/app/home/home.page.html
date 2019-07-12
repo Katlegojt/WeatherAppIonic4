@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Weather App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div> {{name}}</div>
+    <ion-item>
+        <ion-label position="floating">Search location</ion-label>
+        <ion-input name="city" [(ngModel)]="city"></ion-input>
+      </ion-item>
+
+      <ion-button color="primary" (click)="searchData()">Search</ion-button>
+ 
+      <tr *ngFor="let value of weatherData">
+          <td>
+             {{value.main.temp_max}} |  {{value.main.temp_min}}
+          </td>
+       </tr>
+   
+</ion-content>
