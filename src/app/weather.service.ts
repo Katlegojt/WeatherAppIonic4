@@ -5,16 +5,16 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class WeatherService {
-  
 
-  city = 'pretoria';
- 
 
-  constructor(private http: HttpClient ) { }
+  city: string = 'pretoria';
+  appId = "";
 
-  getWeatherData( city: string ){
+  constructor(private http: HttpClient) { }
 
-return this.http.get('http://api.openweathermap.org/data/2.5/forecast?q=' + city + '&APPID=' + this.appId);
+  getWeatherData(city: string) {
+
+    return this.http.get('http://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=metric&APPID=' + this.appId);
 
   }
 

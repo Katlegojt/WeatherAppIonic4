@@ -1,6 +1,0 @@
-class City{
-
-name: string;
-
-}
-
