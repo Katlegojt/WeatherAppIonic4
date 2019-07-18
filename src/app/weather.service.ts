@@ -8,12 +8,11 @@ export class WeatherService {
 
 
   city: string = 'pretoria';
-  appId = "";
+  appId = '';
 
   constructor(private http: HttpClient) { }
-
+// http request
   getWeatherData(city: string) {
-
     return this.http.get('http://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=metric&APPID=' + this.appId);
 
   }

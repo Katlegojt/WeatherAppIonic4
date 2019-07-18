@@ -8,72 +8,52 @@
 </ion-header>
 
 <ion-content >
-    <!-- <div class="bg">
-  <h2>{{date | date: 'EEEE'}} {{date | date: 'dd'}}-{{date | date:'MM'}}-{{date | date: 'yyyy'}} {{ date | date : 'h:mm:ss'}}</h2>
-    <ion-searchbar showCancelButton="focus" [(ngModel)]="city"></ion-searchbar>
-    <ion-button color="primary" (click)="searchData()">Search</ion-button>
-      <div>
-        <p>Search Results Of: {{name}}</p>
-      </div>
-     <p>{{values?.list[0].main.temp | number : '1.0-0'}} &#8451; {{ values?.list[0].dt_txt | date: 'EEEE h:mm:ss' }}&nbsp;</p>
-  </div> -->
-    
+  
   <div class="container">
       <div class="row">
           <div class="col-md-4 offset-md-4">
               <div class="weather">
                   <div class="current">
                       <div class="info">
-                          <h2>{{date | date: 'EEEE'}} {{date | date: 'dd'}}-{{date | date:'MM'}}-{{date | date: 'yyyy'}}</h2>
+                        <!-- date information -->
+                          <h2>{{date | date: 'EEEE'}} {{date | date: 'dd'}}-{{date | date:'MM'}}-{{date | date: 'yy'}}</h2>
                           <h2> {{ date | date : 'hh:mm:ss'}}</h2>
                            <div>&nbsp;</div> 
+                           <!-- city name -->
                           <div class="city"><small><small>CITY: </small>{{name}}</small></div>
-                          <div class="temp">{{values?.list[0].main.temp | number : '1.0-0'}} <small>&#8451;</small></div>
+                          <div class="temp">{{values?.list[0].main.temp | number : '1.0-0'}} <small>&#8451;<img class="img1" 
+                            src="http://openweathermap.org/img/wn/{{values?.list[0].weather[0].icon}}@2x.png"></small></div>
                           <div class="wind"><small><small>WIND:</small></small> {{values?.list[0].wind.speed}} km/h</div>
                           <div>&nbsp;</div>
                           <ion-searchbar showCancelButton="focus" [(ngModel)]="city"></ion-searchbar>
                           <ion-button color="tertiary" expand="block" fill="solid" (click)="searchData()">Search</ion-button>
                       </div>
-                      <div class="icon">
-                          <span class="wi-day-sunny"></span>
-                      </div>
+                 
                   </div>
-                  <div class="future">
-                      <div class="day">
-                          <h3>{{values?.list[8].dt_txt | date : 'EE HH:mm'}}</h3>
-                       
-                      </div>
-                      <div class="day">
-                          <h3>{{values?.list[15].dt_txt | date : 'EE HH:mm'}}</h3>
-                          
-                      </div >
-                      <div fill="outline" class="day">
-                          <h3>{{values?.list[22].dt_txt | date : 'EE HH:mm'}}</h3>
-                         
-                      </div >
-                  </div>
+                  <!-- future dates -->
                   <div class="future">
                       <div class="day"> 
+                          <h3 style=" border-right: 3px solid black ;">{{values?.list[8].dt_txt | date : 'EE HH:mm'}}</h3>
                           <P style=" border-right: 3px solid black ;">{{values?.list[8].main.temp | number : '1.0-0'}}&#8451; <br>
                           {{values?.list[8].weather[0].description }}<br>
                           <img src="http://openweathermap.org/img/wn/{{values?.list[8].weather[0].icon}}@2x.png"></P>
-                          <p><span class="wi-day-cloudy"></span></p>
+                          
                       </div>
            
                       <div  class="day">
+                          <h3 style=" border-right: 3px solid black ;">{{values?.list[15].dt_txt | date : 'EE HH:mm'}}</h3>
                           <P style=" border-right: 3px solid black;">{{values?.list[15].main.temp | number : '1.0-0'}} &#8451;<br>
                           {{values?.list[15].weather[0].description }}<br>
                           <img src="http://openweathermap.org/img/wn/{{values?.list[12].weather[0].icon}}@2x.png"></P>
-                          <p><span class="wi-showers"></span></p>
+                        
                       </div >
                       <div  class="day">
-                         
-                          <P style=" border-right: 3px solid black;">{{values?.list[22].main.temp | number : '1.0-0'}} &#8451;<br>
-                          {{values?.list[22].weather[0].description }}<br>
+                          <h3 style=" border-right: 3px solid black ;">{{values?.list[23].dt_txt | date : 'EE HH:mm'}}</h3>
+                          <P style=" border-right: 3px solid black;">{{values?.list[23].main.temp | number : '1.0-0'}} &#8451;<br>
+                          {{values?.list[23].weather[0].description }}<br>
                         <img src="http://openweathermap.org/img/wn/{{values?.list[20].weather[0].icon}}@2x.png">
                         </P>
-                          <p><span class="wi-rain"></span></p>
-                      </div >
+                    </div>
                     </div>
                 </div>
           </div>
