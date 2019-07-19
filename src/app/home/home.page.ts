@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { WeatherService } from '../weather.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-home',
@@ -15,9 +16,11 @@ export class HomePage {
   weatherData: any;
   cityData: any;
   name : string;
+  message : string;
+  showMsg : boolean = false;
  
 
-  constructor(private service: WeatherService) {
+  constructor(private service: WeatherService,  private toastr: ToastrService) {
 
     // data from http request
     this.service.getWeatherData(this.city).subscribe(data => {
@@ -41,6 +44,13 @@ export class HomePage {
       console.log(data);
 
     
+    } ,  error => {
+
+      this.message = 'Cant find location';
+      this.toastr.success(this.message, 'try anther!',{
+        disableTimeOut:false
+      });
+     
     });
   }
 

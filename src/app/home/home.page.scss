@@ -1,6 +1,10 @@
 .container{
-
-    height: 100%
+    background-image:
+    linear-gradient(
+      to top right, 
+      lightblue, #7044ff
+    );
+   
 }
 
 .weather
@@ -21,6 +25,7 @@
         padding: 19px;
         text-shadow: 1px 1px #7044ff;
         background-position: right;
+        height: 100%;
     }
 
         .weather .current .info
@@ -55,13 +60,10 @@
 
     .weather .future
     {
+        height: 100%;
         display: flex;
         flex-flow: row nowrap;
-        background-image:
-        linear-gradient(
-          to top right, 
-          lightblue, #7044ff
-        );
+       
          
         
      
@@ -85,6 +87,7 @@
             .weather .future .day p
         {
                 font-size: 14px;
+                height: 100%;
         }
 
 .img1{
@@ -92,5 +95,16 @@
     left: 38%;
     position: absolute;
 }
+
+// .container{
+//     height: 100%;
+//     background-image:
+//     linear-gradient(
+//       to top right, 
+//       lightblue, #7044ff
+//     );
+     
+
+
 
        
