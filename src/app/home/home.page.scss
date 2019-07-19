@@ -59,9 +59,13 @@
         flex-flow: row nowrap;
         background-image:
         linear-gradient(
-          to right, 
+          to top right, 
           lightblue, #7044ff
         );
+         
+        
+     
+      
     }
 
         .weather .future .day
@@ -69,6 +73,7 @@
             flex-grow: 1;
             text-align: center;
             cursor: pointer;
+            height: 100%
         }
 
            
@@ -84,7 +89,7 @@
 
 .img1{
 
-    left: 50%;
+    left: 38%;
     position: absolute;
 }
 

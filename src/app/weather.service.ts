@@ -8,7 +8,8 @@ export class WeatherService {
 
 
   city: string = 'pretoria';
-  appId = '';
+  appId = '1f31d8a9da3b757eb996cfd7e84b8a84';
+  //
 
   constructor(private http: HttpClient) { }
 // http request
