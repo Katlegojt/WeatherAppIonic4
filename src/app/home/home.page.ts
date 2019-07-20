@@ -52,6 +52,9 @@ export class HomePage {
       });
      
     });
+
+    this.date = Date.now();;
+
   }
 
 
